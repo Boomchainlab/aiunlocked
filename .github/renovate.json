@@ -1,0 +1,16 @@
+{
+  "extends": ["config:base", "schedule:automergeDaily", ":dependencyDashboard"],
+  "automerge": true,
+  "packageRules": [
+    {
+      "matchPackagePatterns": ["^vite", "^firebase", "^@vitejs", "^@types"],
+      "automerge": true,
+      "groupName": "core toolchain"
+    },
+    {
+      "matchDepTypes": ["devDependencies"],
+      "automerge": true,
+      "groupName": "devDependencies"
+    }
+  ]
+}
